@@ -1,0 +1,19 @@
+name: 'Update Engine With New Release'
+description: 'Update engine based on inputs'
+author: 'd10sfan'
+runs:
+    using: 'node20'
+    main: 'index.js'
+inputs:
+  engineName:
+    description: Name of engine
+    required: true
+  newTag:
+    description: New tag string
+    required: true
+  oldTag:
+    description: Old tag string
+    required: true
+outputs:
+  matrix:
+    description: Matrix
