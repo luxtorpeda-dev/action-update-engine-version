@@ -36,7 +36,12 @@ async function run() {
 
         for(let engineData of packagesJson.engines) {
             if(engineData.internal_engine_name === engineName) {
-                engineData.version = newTag;
+                if(newTag) {
+                    engineData.version = newTag;
+                } else if(newHash) {
+                    engineData.version = newHash;
+                }
+
             }
         }
 
