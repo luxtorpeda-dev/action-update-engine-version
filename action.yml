@@ -11,7 +11,7 @@ inputs:
   newTag:
     description: New tag string
     required: false
-  oldHash:
+  oldTag:
     description: Old tag string
     required: false
   newHash:
