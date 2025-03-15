@@ -16,11 +16,18 @@ async function run() {
     try {
         const engineName = core.getInput('engineName');
         const newTag = core.getInput('newTag');
+        const newHash = core.getInput('newHash');
         const envJsonPath = path.join(packagesEnginesPath, engineName, 'env.json');
 
         const envJsonStr = await fs.readFile(envJsonPath, 'utf-8');
         const envData = JSON.parse(envJsonStr);
-        envData.COMMIT_TAG = newTag;
+
+        if(newTag) {
+            envData.COMMIT_TAG = newTag;
+        } else if(newHash) {
+            envData.COMMIT_HASH = newHash;
+        }
+
         await fs.writeFile(envJsonPath, JSON.stringify(envData, null, 4));
 
         const packagesJsonPath = path.join('metadata', 'packagessniper_v2.json');

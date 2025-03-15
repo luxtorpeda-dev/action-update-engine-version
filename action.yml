@@ -10,10 +10,16 @@ inputs:
     required: true
   newTag:
     description: New tag string
-    required: true
-  oldTag:
+    required: false
+  oldHash:
     description: Old tag string
-    required: true
+    required: false
+  newHash:
+    description: New hash string
+    required: false
+  oldHash:
+    description: Old hash string
+    required: false
 outputs:
   matrix:
     description: Matrix
