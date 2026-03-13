@@ -2,7 +2,7 @@ name: 'Update Engine With New Release'
 description: 'Update engine based on inputs'
 author: 'd10sfan'
 runs:
-    using: 'node20'
+    using: 'node24'
     main: 'index.js'
 inputs:
   engineName:
